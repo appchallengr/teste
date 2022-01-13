@@ -1,0 +1,117 @@
+{
+    "currency-position": {
+        "results": [
+            {
+                "id": "AUD-2022-01-07",
+                "date": "07/01/2022",
+                "coin": "AUD",
+                "openPosition": "10,000.00",
+                "cam": "40,000.00",
+                "positionWithoutContract": "-",
+                "diffWithoutContract": "-",
+                "positionWithContract": "30,000.00",
+                "diffWithContract": "-"
+            },
+            {
+                "id": "USD-2022-01-07",
+                "date": "07/01/2022",
+                "coin": "USD",
+                "openPosition": "30,000.00",
+                "cam": "80,000.00",
+                "positionWithoutContract": "10,000.00",
+                "diffWithoutContract": "10,000.00",
+                "positionWithContract": "80,000.00",
+                "diffWithContract": "-"
+            }
+        ],
+        "currentPage": 1,
+        "firstRecordOnPage": 1,
+        "lastRecordOnPage": 10,
+        "pageSize": 10
+    },
+    "details": [
+        {
+            "id": "AUD-2022-01-07",
+            "openPosition": "10,000.00",
+            "cam": "40,000.00",
+            "positionWithoutContract": "-",
+            "positionWithContract": "30,000.00",
+            "date": "07/01/2022",
+            "trades": [
+                {
+                    "trade": "1",
+                    "coin": "AUD",
+                    "side": "Buy",
+                    "amount": "10,000.00",
+                    "status": "Registered",
+                    "contractId": "1",
+                    "hour": "10:00 PM"
+                },
+                {
+                    "trade": "2",
+                    "coin": "AUD",
+                    "side": "Buy",
+                    "amount": "10,000.00",
+                    "status": "Registered",
+                    "contractId": "2",
+                    "hour": "11:00 PM"
+                },
+                {
+                    "trade": "3",
+                    "coin": "AUD",
+                    "side": "Buy",
+                    "amount": "10,000.00",
+                    "status": "Registered",
+                    "contractId": "3",
+                    "hour": "11:30 PM"
+                },
+                {
+                    "trade": "4",
+                    "coin": "AUD",
+                    "side": "Sell",
+                    "amount": "60,000.00",
+                    "status": "Registered",
+                    "contractId": "4",
+                    "hour": "11:45 PM"
+                }
+            ],
+            "currentPage": 1,
+            "firstRecordOnPage": 1,
+            "lastRecordOnPage": 10,
+            "pageSize": 10
+        },
+            
+            {
+                "id": "USD-2022-01-07",
+                "openPosition": "30,000.00",
+                "cam": "80,000.00",
+                "positionWithoutContract": "10,000.00",
+                "positionWithContract": "80,000.00",
+                "date": "07/01/2022",
+                "trades": [
+                    {
+                        "trade": "5",
+                        "coin": "USD",
+                        "side": "Sell",
+                        "amount": "50,000.00",
+                        "status": "Registered",
+                        "contractId": "4",
+                        "hour": "10:00 PM"
+                    },
+                    {
+                        "trade": "6",
+                        "coin": "USD",
+                        "side": "Sell",
+                        "amount": "10,000.00",
+                        "status": "Ready",
+                        "contractId": "-",
+                        "hour": "10:00 PM"
+                    }
+                ],
+                "currentPage": 1,
+                "firstRecordOnPage": 1,
+                "lastRecordOnPage": 10,
+                "pageSize": 10
+            }
+        ]
+}
