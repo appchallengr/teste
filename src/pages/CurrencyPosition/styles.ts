@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 90%;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 30px;
 `;
 
 export const ContainerTable = styled.div`
@@ -18,6 +14,18 @@ export const DateBar = styled.div`
 
 export const ContentTable = styled.div`
     display:flex;
+
+    th{
+      font-weight: bold;
+      font-size: 11px;
+      font-family: 'Poppins';
+    }
+
+    tbody{
+      tr{
+        cursor: pointer;
+      }
+    }
 `
 
 export const PaginationContainer = styled.div`

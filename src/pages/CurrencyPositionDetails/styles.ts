@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 30px;
 `;
 
 export const ContainerTable = styled.div`

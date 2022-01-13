@@ -13,6 +13,7 @@ export default createGlobalStyle`
 
     body{
         -web-kit-font-smoothing: antialiased;
+        background-color: #f6f8fa;
     }
 
     table{

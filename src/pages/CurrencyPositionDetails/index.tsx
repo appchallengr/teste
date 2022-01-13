@@ -32,6 +32,7 @@ const CurrencyPositionDetails: React.FC = () => {
 
     const [value, setValue] = useState(new Date());
     const [result, setResult] = useState<any>();
+    const [trades, setTrades] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     // const [orderProperty, setOrderProperty] = useState('id');
 
@@ -43,10 +44,21 @@ const CurrencyPositionDetails: React.FC = () => {
         api
           .get(`/details/${id}`)
           .then((response:any) => {
-              console.log("response",response)
-               setResult(response.data);
+              console.log("response",response.data)
+                setTrades(response.data.trades);
+                console.log("trades",trades);
           });
     }, [])
+
+    
+
+    const Cell = (props:any) => {
+        const { column } = props;
+        if (column.name === 'side') {
+          return <td>{props.value}</td>;
+        }
+        return <Table.Cell {...props} />;
+    };
 
     return (
         <Container>
@@ -115,15 +127,15 @@ const CurrencyPositionDetails: React.FC = () => {
                 <Divider />
                 <ContentTable>
                 <Paper>
-                    <Grid
-                    rows={result}
+                <Grid
+                    rows={trades}
                     columns={columns}
                     >
                         <SortingState />
                         <IntegratedSorting />
                         <FilteringState defaultFilters={[]} />
                         <IntegratedFiltering />
-                        <Table />
+                        <Table cellComponent={Cell}/>
                         <TableHeaderRow showSortingControls />
                         <TableFilterRow />
                     </Grid>

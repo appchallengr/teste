@@ -6,23 +6,19 @@ import { DatePicker, Divider, Input, InputGroup } from 'rsuite';
 
 import ICurrencyPosition from '../../models/CurrencyPosition';
 import api from '../../services/api';
-import { Link } from 'react-router-dom';
-import ReactLoading from 'react-loading';
+import { useNavigate } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import { Grid, Table, TableFilterRow, TableHeaderRow, TableSelection } from '@devexpress/dx-react-grid-material-ui';
 import { FilteringState, IntegratedFiltering, IntegratedSorting, SelectionState, SortingState } from '@devexpress/dx-react-grid';
 
 const CurrencyPosition: React.FC = () => {
 
-    const columnsTable = [
-        { name: 'id', title: 'ID' },
-        { name: 'product', title: 'Product' },
-        { name: 'owner', title: 'Owner' },
-      ];
-      const rows = [
+    const navigate = useNavigate()
+    
+    const rows = [
         { id: 0, product: 'DevExtreme', owner: 'DevExpress' },
         { id: 1, product: 'DevExtreme Reactive', owner: 'DevExpress' },
-      ];
+    ];
 
     const columns= [
         {id: 1, name: 'coin', title: 'Moeda', orderCrescent: true, ordered: false, width: '12%'},
@@ -41,21 +37,20 @@ const CurrencyPosition: React.FC = () => {
     const [value, setValue] = useState(new Date());
     const [result, setResult] = useState<ICurrencyPosition[]>([]);
     const [loading, setLoading] = useState(true);
-    const [selection, setSelection] = useState([1]);
+    const [selection, setSelection] = useState([]);
 
     useEffect( () => {
         setLoading(true);
         api
           .get(`/currency-position`)
           .then((response:any) => {
-              console.log("response",response)
               setResult(response.data.results);
               setLoading(false);
           });
     }, [])
 
     const getRow = (e:any) => {
-        console.log("e",e)
+        navigate(`/posicoes-cambiais/detalhes/${result[e].id}`);
     }    
 
     return (
